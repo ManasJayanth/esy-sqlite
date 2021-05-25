@@ -3,7 +3,7 @@ package](https://github.com/ManasJayanth/esy-packages-template/workflows/Build%2
 
 # esy-sqlite
 
-`esy-sqlite` is sample package, [`hello`](https://github.com/esy/test-hello-c), packaged for [`esy`](https://esy.sh/).
+`esy-sqlite` is [`sqlite`](https://www.sqlite.org/index.html), packaged for [`esy`](https://esy.sh/).
 
 ## Why
 `esy` can not only fetch and install Reason and OCaml libraries and tools,
