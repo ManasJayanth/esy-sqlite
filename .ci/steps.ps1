@@ -27,6 +27,11 @@ function IsPortOccupied ($portNo) {
    Catch { return $false; }
 }
 
+function rimraf ($path) {
+  try { rm -Recurse -Force $path -erroraction stop }
+  catch [System.Management.Automation.ItemNotFoundException] { $null }
+}
+
 if (!(IsPortOccupied 4873 )) {
     new_section "Setting up verdaccio"
     New-Item -ItemType Directory -Force -Path ~/.config/verdaccio,~/.local/share/verdaccio/storage
@@ -42,7 +47,7 @@ npm publish --registry $env:REGISTRY_URL ./package.tar.gz
 
 cd esy-test/
 $env:ESY__PREFIX = "$env:HOME/_esy_test/prefix"
-rm -Recurse -Force $env:ESY__PREFIX
+rimraf $env:ESY__PREFIX
 New-Item -ItemType Directory -Force -Path $env:ESY__PREFIX
 esy i --npm-registry $env:REGISTRY_URL
 esy b
