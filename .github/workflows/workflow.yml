@@ -30,6 +30,11 @@ jobs:
 
       - name: Run end-to-end tests on the package 
         run: bash ./.ci/steps.sh
+        if: runner.os != 'Windows'
+
+      - name: Run end-to-end tests on the package 
+        run: ./.ci/steps.ps1
+        if: runner.os == 'Windows'
 
       - uses: actions/upload-artifact@v2
         with:
