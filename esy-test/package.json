@@ -1,0 +1,8 @@
+{
+  "esy": {
+    "build": "sqlite3 --help"
+  },
+  "dependencies": {
+    "esy-sqlite": "*"
+  }
+}
