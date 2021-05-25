@@ -1,6 +1,6 @@
 {
   "name": "esy-sqlite",
-  "version": "0.0.1000",
+  "version": "3.35.5000",
   "description": "hello packaged for esy",
   "source": "https://sqlite.org/2021/sqlite-autoconf-3350500.tar.gz#sha256:f52b72a5c319c3e516ed7a92e123139a6e87af08a2dc43d7757724f6132e6db0",
   "override": {
