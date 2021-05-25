@@ -30,7 +30,7 @@ function IsPortOccupied ($portNo) {
 if (!(IsPortOccupied 4873 )) {
     new_section "Setting up verdaccio"
     New-Item -ItemType Directory -Force -Path ~/.config/verdaccio,~/.local/share/verdaccio/storage
-    cp -Force ./.ci/verdaccio-config.yaml C:\Users\manas\.config\verdaccio\config.yaml
+    cp -Force ./.ci/verdaccio-config.yaml ~\.config\verdaccio\config.yaml
     Start-Job { verdaccio }
     Start-Sleep -s 1
 }
