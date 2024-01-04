@@ -7,6 +7,6 @@
     "@opam/sqlite3": "*"
   },
   "resolutions": {
-    "esy-sqlite": "3.35.5000"
+    "esy-sqlite": "3.44.2000"
   }
 }

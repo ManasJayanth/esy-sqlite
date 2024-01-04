@@ -1,11 +1,11 @@
 {
   "name": "esy-sqlite",
-  "version": "3.35.5000",
-  "description": "hello packaged for esy",
-  "source": "https://sqlite.org/2021/sqlite-autoconf-3350500.tar.gz#sha256:f52b72a5c319c3e516ed7a92e123139a6e87af08a2dc43d7757724f6132e6db0",
+  "version": "3.44.2000",
+  "description": "esy-sqlite packaged for esy",
+  "source": "https://www.sqlite.org/2023/sqlite-autoconf-3440200.tar.gz#sha256:1c6719a148bc41cf0f2bbbe3926d7ce3f5ca09d878f1246fcc20767b175bb407",
   "override": {
     "buildEnv": {
-      "CPPFLAGS": "-DSQLITE_ENABLE_COLUMN_METADATA=1 -DSQLITE_MAX_VARIABLE_NUMBER=250000 -DSQLITE_ENABLE_RTREE=1 -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_JSON1=1"
+      "CPPFLAGS": "-DSQLITE_ENABLE_API_ARMOR=1 -DSQLITE_ENABLE_COLUMN_METADATA=1 -DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_FTS5=1 -DSQLITE_ENABLE_JSON1=1 -DSQLITE_ENABLE_MEMORY_MANAGEMENT=1 -DSQLITE_ENABLE_RTREE=1 -DSQLITE_ENABLE_STAT4=1 -DSQLITE_ENABLE_UNLOCK_NOTIFY=1 -DSQLITE_MAX_VARIABLE_NUMBER=250000 -DSQLITE_USE_URI=1"
     },
     "build": [
       "find ./ -exec touch -t 200905010101 {} +",
@@ -33,6 +33,8 @@
         "scope": "global"
       }
     },
-    "dependencies": {}
+    "dependencies": {
+      "esy-readline": "*"
+    }
   }
 }
