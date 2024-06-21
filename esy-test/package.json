@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "esy-sqlite": "*",
-    "@opam/sqlite": "*"
+    "@opam/sqlite3": "*"
   },
   "resolutions": {
     "esy-sqlite": "3.35.5000"
