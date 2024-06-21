@@ -10,7 +10,7 @@
     "build": [
       [
         "./configure",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32': ''}",
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32': ''}",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
         "--enable-dynamic-extensions",
