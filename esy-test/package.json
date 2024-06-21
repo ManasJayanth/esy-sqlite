@@ -3,6 +3,10 @@
     "build": "sqlite3 --version"
   },
   "dependencies": {
-    "esy-sqlite": "*"
+    "esy-sqlite": "*",
+    "@opam/sqlite": "*"
+  },
+  "resolutions": {
+    "esy-sqlite": "3.35.5000"
   }
 }
