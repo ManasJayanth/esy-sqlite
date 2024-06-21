@@ -1,7 +1,6 @@
 name: Build and test the esy package
 
 on:
-  - pull_request
   - push
 
 jobs:
@@ -11,6 +10,7 @@ jobs:
       matrix:
         os:
           - macos-latest
+          - macos-13
           - ubuntu-latest
           - windows-latest
 
@@ -18,25 +18,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+      - name: Use Node.js
+        uses: actions/setup-node@v3
 
       - name: Install esy
-        run: npm install -g @esy-nightly/esy verdaccio
+        run: npm install -g esy esy-package
 
       - name: Run end-to-end tests on the package 
-        run: bash ./.ci/steps.sh
-        if: runner.os != 'Windows'
+        run: DEBUG=bale*,verdaccio* esy-package
+        shell: bash
+        env:
+          SHELL: "bash.exe" # HACK!! For some weird reason, $SHELL in Github actions' Windows' bash shell doesn't set this environment variable. We rely on it to figure if path normalisation is necessary on Gitbash Windows
 
-      - name: Run end-to-end tests on the package 
-        run: ./.ci/steps.ps1
-        if: runner.os == 'Windows'
-
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: release
           path: package.tar.gz
